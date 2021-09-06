@@ -4,10 +4,6 @@ import time
 from case.login_in import login
 from util import explicit_wait as etwait
 import settings
-from selenium.webdriver.chrome.options import Options
-
-options = Options()
-options.debugger_address = '127.0.0.1:8001'
 
 settings.create_dir()
 pict_path = settings.pictsave_path()
@@ -17,9 +13,9 @@ class AnnouncementTypeConfig(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
-        # login(self.driver)
+        login(self.driver)
 
     @classmethod
     def tearDownClass(self):
@@ -113,6 +109,3 @@ class AnnouncementTypeConfig(unittest.TestCase):
             self.driver.save_screenshot(pict_path + 'AnnouncementTypeConfigDelete.png')
         # 断言用例是否通过
         self.assertEqual(text1, '删除成功')
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)

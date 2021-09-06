@@ -4,10 +4,6 @@ import time
 from case.login_in import login
 from util import explicit_wait as etwait
 import settings
-from selenium.webdriver.chrome.options import Options
-
-options = Options()
-options.debugger_address = '127.0.0.1:8001'
 
 settings.create_dir()
 pict_path = settings.pictsave_path()
@@ -17,9 +13,9 @@ class MyAnnouncement(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
-        # login(self.driver)
+        login(self.driver)
 
     @classmethod
     def tearDownClass(self):
@@ -60,6 +56,3 @@ class MyAnnouncement(unittest.TestCase):
         self.driver.find_element_by_xpath('/html/body/div[1]/div[2]/div[2]/button').click()
         # 断言判断用例是否通过
         self.assertEqual(datanum, 1)
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
