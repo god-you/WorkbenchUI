@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+import win32api
 
 """选择显性等待定位方式"""
 def explicit_wait(driver, times, method, value):
@@ -31,3 +32,6 @@ def drivers(browser):
         return driver
     else:
         print("Please choose one of Firefox, Chrome, IE three browsers to use.")
+
+def drop_down_menu():
+    win32api.keybd_event(40, 0, 0, 0)

@@ -3,7 +3,7 @@ import unittest
 from selenium import webdriver
 from case.login_in import login_In
 import time
-from util import explicit_wait as etwait
+from util import explicit_wait as etwait,drop_down_menu
 import settings
 import os
 from selenium.webdriver.common.action_chains import ActionChains
@@ -31,7 +31,7 @@ class Staffmana(unittest.TestCase):
         # 进入系统管理目录
         ele2 = etwait(self.driver, 10, 'xpath', '//*[@id="menuul"]/li[26]/a')
         ele2.click()
-        ActionChains(self.driver).key_down(Keys.ARROW_DOWN).perform()
+        drop_down_menu()
         time.sleep(1)
         # 进入员工管理菜单
         self.driver.find_element_by_xpath('//*[@id="系统管理"]/li[14]/a').click()

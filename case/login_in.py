@@ -2,6 +2,10 @@ from time import sleep
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from util import explicit_wait as etwait
+from selenium import webdriver
+import pykeyboard
+import win32api
+import win32con
 
 def login_In(driver):
         driver.maximize_window()
@@ -24,10 +28,11 @@ def login_In(driver):
                 pass
 
         # 下拉查找对应目录
-        sleep(5)
+        sleep(4)
         ele1 = etwait(driver, 30, 'xpath', '//*[@id="menuul"]/li[1]/a')
         ele1.click()
-        ActionChains(driver).key_down(Keys.ARROW_DOWN).perform()
+        sleep(1)
+        win32api.keybd_event(40, 0, 0, 0)
 
 def login(driver):
         u"""无需下拉查找对应目录"""
