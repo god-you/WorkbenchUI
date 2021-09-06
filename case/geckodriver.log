@@ -1,0 +1,18 @@
+1629380042548	geckodriver	INFO	Listening on 127.0.0.1:49859
+1629380045621	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\ASUS\\AppData\\Local\\Temp\\rust_mozprofileLdZuHI"
+1629380047152	Marionette	INFO	Marionette enabled
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ASUS\\AppData\\Local\\Temp\\rust_mozprofileLdZuHI\\search.json.mozlz4", (void 0)))
+1629380050426	Marionette	INFO	Listening on port 49868
+1629380050913	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1629380077430	Marionette	INFO	Stopped listening on port 49868
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1629380079185	geckodriver	INFO	Listening on 127.0.0.1:49919
+1629380082218	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\ASUS\\AppData\\Local\\Temp\\rust_mozprofile61kpaW"
+1629380082693	Marionette	INFO	Marionette enabled
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ASUS\\AppData\\Local\\Temp\\rust_mozprofile61kpaW\\search.json.mozlz4", (void 0)))
+1629380085506	Marionette	INFO	Listening on port 49927
+1629380085913	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1629380090405	Marionette	INFO	Stopped listening on port 49927
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
