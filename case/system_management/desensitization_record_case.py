@@ -11,7 +11,7 @@ settings.create_dir()
 pict_path = settings.pictsave_path()
 
 class Desensitization_record(unittest.TestCase):
-    u"""操作记录"""
+    u"""脱敏记录"""
 
     @classmethod
     def setUpClass(self):

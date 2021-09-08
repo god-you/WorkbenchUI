@@ -47,7 +47,13 @@ class Softphone(unittest.TestCase):
         # 填写新增信息并确认
         alter_ele1 = etwait(self.driver, 30, 'xpath', '//*[@id="url"]')
         alter_ele1.send_keys('新增软电话URL测试')
-        self.driver.find_element_by_xpath('//*[@id="is_default"]').click()
+        result = self.driver.find_element_by_xpath('//*[@id="is_default"]').is_selected()
+        print(result)
+        # 判断是否勾选为默认数据，若勾选，则去除勾选状态，否则忽略
+        if result:
+            self.driver.find_element_by_xpath('//*[@id="is_default"]').click()
+        else:
+            pass
         self.driver.find_element_by_xpath('//*[@id="addcompany"]').click()
         time.sleep(1)
         self.driver.find_element_by_xpath('//*[@id="io0"]/td[2]/span[3]').click()
