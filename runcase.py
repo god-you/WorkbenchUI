@@ -13,5 +13,5 @@ if __name__ == "__main__":
     sys_manage_runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'东航测试报告', description=u'系统管理测试用例执行情况', verbosity=2)
     home_announ_runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'东航测试报告', description=u'首页公告测试用例执行情况', verbosity=2)
     sys_manage_runner.run(sys_manage)
-    home_announ_runner.run(home_announ)
+    # home_announ_runner.run(home_announ)
     fp.close()
