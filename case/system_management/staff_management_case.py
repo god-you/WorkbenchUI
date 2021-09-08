@@ -8,7 +8,9 @@ import settings
 import os
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.debugger_address = '127.0.0.1:8000'
 settings.create_dir()
 pict_path = settings.pictsave_path()
 
@@ -18,9 +20,9 @@ class Staffmana(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(10)
-        login_In(self.driver)
+        # login_In(self.driver)
 
     @classmethod
     def tearDownClass(self):
@@ -151,16 +153,28 @@ class Staffmana(unittest.TestCase):
 
     def test06dataexport(self):
         u"""数据导出"""
+        frame = self.driver.find_element_by_css_selector('.iframeClass')
+        self.driver.switch_to.frame(frame)
+        path = "C:\\Users\\ASUS\\Downloads\\"
+        num1 = len(os.listdir(path))
         # 点击‘数据导出’按钮
         self.driver.find_element_by_xpath('//*[@id="caozuobt"]/button[6]').click()
-        file = "C:\\Users\\ASUS\\Downloads\\员工信息.xls"
-        result = os.path.exists(file)
-        time.sleep(15)
-        os.remove(file)
-        if result:
-            pass
-        else:
-            self.driver.save_screenshot(pict_path + 'staffmanaexp.png')
+        while True:
+            num2 = len([lists for lists in os.listdir(path)])
+            if num2 == num1+1:
+                break
+            else:
+                continue
+        file = path + '员工信息.xls'
+        while True:
+            result = os.path.exists(path + '员工信息.xls')
+            if result:
+                f = open(file)
+                f.close()
+                os.remove(file)
+                break
+            else:
+                continue
         self.assertTrue(result)
 
     def test07csgconfig(self):
@@ -209,13 +223,15 @@ class Staffmana(unittest.TestCase):
         # 点击‘模板导出’按钮
         self.driver.find_element_by_xpath('//*[@id="caozuobt"]/button[8]').click()
         file = "C:\\Users\\ASUS\\Downloads\\员工导入模板.xlsx"
-        result = os.path.exists(file)
-        time.sleep(15)
-        os.remove(file)
-        if result:
-            pass
-        else:
-            self.driver.save_screenshot(pict_path + 'staffmanaexp.png')
+        while True:
+            result = os.path.exists(file)
+            if result:
+                f = open(file)
+                f.close()
+                os.remove(file)
+                break
+            else:
+                continue
         self.assertTrue(result)
 
     def test10batimport(self):
