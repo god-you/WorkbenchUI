@@ -1,11 +1,7 @@
 from time import sleep
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from util import explicit_wait as etwait
-from selenium import webdriver
-import pykeyboard
+from common.util import explicit_wait as etwait
 import win32api
-import win32con
+
 
 def login_In(driver):
         driver.maximize_window()

@@ -1,13 +1,10 @@
 # -*- coding:UTF8 -*-
 import unittest
 from selenium import webdriver
-from case.login_in import login_In
 import time
-from util import explicit_wait as etwait,drop_down_menu
-import settings
+from common.util import explicit_wait as etwait,drop_down_menu
+from common import settings
 import os
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 options = Options()
 options.debugger_address = '127.0.0.1:8000'

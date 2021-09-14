@@ -35,3 +35,8 @@ def drivers(browser):
 
 def drop_down_menu():
     win32api.keybd_event(40, 0, 0, 0)
+
+# 本地目录存在路径
+def path():
+    local_path = "C:\\Users\\ASUS\\Desktop\\rongda_digital\\eastern_airlines"
+    return local_path

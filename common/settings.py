@@ -1,9 +1,10 @@
 import os
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from common import util
 
 directory_name = time.strftime("%Y_%m_%d", time.localtime(time.time()))
-path = "C:\\Users\\ASUS\\Desktop\\rongda_digital\\eastern_airlines\\error_screenshot\\" + directory_name
+path = util.path() + "\\error_screenshot\\" + directory_name
 
 def create_dir():
     if not os.path.exists(path):
@@ -26,3 +27,4 @@ def click_locxy(dr, x, y, click=True):
   else:
     ActionChains(dr).move_by_offset(x, y).context_click().perform()
   ActionChains(dr).move_by_offset(-x, -y).perform()
+

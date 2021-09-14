@@ -1,8 +1,8 @@
 import unittest
 from selenium import webdriver
 from case.login_in import login
-from util import explicit_wait as etwait
-import settings
+from common.util import explicit_wait as etwait
+from common import settings
 
 settings.create_dir()
 pict_path = settings.pictsave_path()

@@ -2,11 +2,8 @@ import unittest
 from selenium import webdriver
 from case.login_in import login_In
 import time
-from util import explicit_wait as etwait,drop_down_menu
-import settings
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-import win32api
+from common.util import explicit_wait as etwait,drop_down_menu
+from common import settings
 
 settings.create_dir()
 pict_path = settings.pictsave_path()
