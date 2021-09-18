@@ -27,4 +27,3 @@ def click_locxy(dr, x, y, click=True):
   else:
     ActionChains(dr).move_by_offset(x, y).context_click().perform()
   ActionChains(dr).move_by_offset(-x, -y).perform()
-

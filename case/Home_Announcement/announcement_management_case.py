@@ -9,7 +9,7 @@ settings.create_dir()
 pict_path = settings.pictsave_path()
 
 class AnnouncementManagement(unittest.TestCase):
-    u"""首页公告"""
+    u"""公告管理"""
 
     @classmethod
     def setUpClass(self):
@@ -22,7 +22,7 @@ class AnnouncementManagement(unittest.TestCase):
         self.driver.quit()
 
     def test01add(self):
-        u"""公告管理"""
+        u"""新增公告"""
         # 进入首页公告目录
         self.driver.find_element_by_xpath('//*[contains(text(),"首页公告")]').click()
         # 进入公告管理菜单
@@ -54,6 +54,7 @@ class AnnouncementManagement(unittest.TestCase):
         self.assertEqual(text1, '提交成功！')
 
     def test02query(self):
+        u"""公告查询"""
         # 切换至上一级iframe窗口
         self.driver.switch_to.parent_frame()
         etwait(self.driver, 30, 'xpath', '//*[@id="addtable"]/tr[1]/td[2]')
@@ -75,6 +76,7 @@ class AnnouncementManagement(unittest.TestCase):
         self.assertNotEqual(datanum, 0)
 
     def test03edit(self):
+        u"""修改公告"""
         # 进入公告修改页面
         time.sleep(3.5)
         self.driver.find_element_by_xpath('//*[@id="addtable"]/tr[1]/td[1]/input').click()
@@ -95,6 +97,7 @@ class AnnouncementManagement(unittest.TestCase):
 
 
     def test04delete(self):
+        u"""删除公告"""
         # 切换至上一级iframe窗口
         self.driver.switch_to.parent_frame()
         # 选择需删除项，点击删除并确认

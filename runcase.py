@@ -1,7 +1,7 @@
 # -*- coding:UTF8 -*-
 
-from common import config
+from common import function
 
 if __name__ == "__main__":
-    system_management = config.system_management()
-    home_announcement = config.home_announcement()
+    function.system_management()
+    function.home_announcement()

@@ -1,13 +1,12 @@
 # -*- coding:UTF8 -*-
 import unittest
 from selenium import webdriver
+from case.login_in import login_In
 import time
-from common.util import explicit_wait as etwait,drop_down_menu
+from common.util import explicit_wait as etwait, drop_down_menu, time_limit
 from common import settings
 import os
-from selenium.webdriver.chrome.options import Options
-options = Options()
-options.debugger_address = '127.0.0.1:8000'
+
 settings.create_dir()
 pict_path = settings.pictsave_path()
 
@@ -17,9 +16,9 @@ class Staffmana(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
-        # login_In(self.driver)
+        login_In(self.driver)
 
     @classmethod
     def tearDownClass(self):
@@ -220,16 +219,17 @@ class Staffmana(unittest.TestCase):
         # 点击‘模板导出’按钮
         self.driver.find_element_by_xpath('//*[@id="caozuobt"]/button[8]').click()
         file = "C:\\Users\\ASUS\\Downloads\\员工导入模板.xlsx"
-        while True:
+        time1 = time_limit()
+        while int(time.strftime("%Y%m%d%H%M%S", time.localtime(time.time()))) <= time1:
             result = os.path.exists(file)
             if result:
                 f = open(file)
                 f.close()
                 os.remove(file)
+                self.assertTrue(result)
                 break
             else:
                 continue
-        self.assertTrue(result)
 
     def test10batimport(self):
         u"""批量导入"""

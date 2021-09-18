@@ -11,7 +11,7 @@ def login_In(driver):
         sleep(2)
         driver.find_element_by_xpath('//*[@id="proceed-link"]').click()
         # 输入账号
-        driver.find_element_by_id('employess_number').send_keys('zlx')
+        driver.find_element_by_id('employess_number').send_keys('panyun')
         # 输入密码
         driver.find_element_by_id('employess_password').send_keys('1')
         # 点击“登录”
@@ -39,7 +39,7 @@ def login(driver):
         sleep(2)
         driver.find_element_by_xpath('//*[@id="proceed-link"]').click()
         # 输入账号
-        driver.find_element_by_id('employess_number').send_keys('zlx')
+        driver.find_element_by_id('employess_number').send_keys('panyun')
         # 输入密码
         driver.find_element_by_id('employess_password').send_keys('1')
         # 点击“登录”

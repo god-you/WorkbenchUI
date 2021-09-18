@@ -9,7 +9,7 @@ settings.create_dir()
 pict_path = settings.pictsave_path()
 
 class MyAnnouncement(unittest.TestCase):
-    u"""首页公告"""
+    u"""我发布的公告"""
 
     @classmethod
     def setUpClass(self):
@@ -22,7 +22,7 @@ class MyAnnouncement(unittest.TestCase):
         self.driver.quit()
 
     def test01query(self):
-        u"""我发布的公告"""
+        u"""公告查询"""
         # 进入首页公告目录
         self.driver.find_element_by_xpath('//*[contains(text(),"首页公告")]').click()
         # 进入我发布的公告菜单

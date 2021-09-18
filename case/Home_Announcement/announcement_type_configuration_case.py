@@ -9,7 +9,7 @@ settings.create_dir()
 pict_path = settings.pictsave_path()
 
 class AnnouncementTypeConfig(unittest.TestCase):
-    u"""首页公告"""
+    u"""公告类型配置"""
 
     @classmethod
     def setUpClass(self):
@@ -22,7 +22,7 @@ class AnnouncementTypeConfig(unittest.TestCase):
         self.driver.quit()
 
     def test01add(self):
-        u"""公告类型配置"""
+        u"""新增公告类型"""
         # 进入首页公告目录
         self.driver.find_element_by_xpath('//*[contains(text(),"首页公告")]').click()
         # 进入公告类型配置菜单
@@ -49,6 +49,7 @@ class AnnouncementTypeConfig(unittest.TestCase):
         self.assertEqual(text1, '新增成功')
 
     def test02query(self):
+        u"""公告类型查询"""
         # 选择公司部门并点击查询
         self.driver.find_element_by_xpath('//*[@id="company"]').click()
         time.sleep(1)
@@ -77,6 +78,7 @@ class AnnouncementTypeConfig(unittest.TestCase):
             self.assertNotEqual(datanum, 0)
 
     def test03edit(self):
+        u"""修改公告类型"""
         # 选择需编辑项
         self.driver.find_element_by_xpath('//*[@id="addtable"]/tr[1]/td[1]/input').click()
         # 进入修改页面，填写编辑信息并确认
@@ -93,6 +95,7 @@ class AnnouncementTypeConfig(unittest.TestCase):
         self.assertEqual(text1, '修改成功')
 
     def test04delete(self):
+        u"""删除公告类型"""
         time.sleep(1)
         # 选择需删除项
         self.driver.find_element_by_xpath('//*[@id="addtable"]/tr[1]/td[1]/input').click()
