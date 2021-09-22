@@ -61,7 +61,7 @@ class Agent_real_time_status(unittest.TestCase):
         etwait(self.driver, 30, 'xpath', '//*[@id="test"]/div[1]/div[2]/div[2]/div[1]/div/div/dl/dd[2]').click()
         self.driver.find_element_by_id('zuowei').send_keys(89100497)
         self.driver.find_element_by_xpath('//*[@id="test"]/div[1]/div[2]/div[2]/div[4]/label').click()
-        ele1 = self.driver.
+        # ele1 = self.driver.
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
